@@ -60,7 +60,13 @@
             <h2 class="sr-only">Tranções</h2>
 
             
+<<<<<<< HEAD
+          <a href="#" 
+          onclick="Modal.open()"
+          class="button new">+ Nova Transação</a>
+=======
           <a href="#" class="button new">+ Nova Transação</a>
+>>>>>>> ba170646bc30eecf4f7fea35288da408bcf52302
             <table id="data-table">
                 <thead>
                     <!---cabeça,cabeçalho-->
@@ -76,7 +82,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="description">Luz</td>
+                        <td class="date">Luz</td>
                         <td class="expense">- R$ 500,00</td>
                         <td class="date">23/01/2021</td>
                             <td><img src="assets/minus.svg" alt="Remover Transação"></td>
@@ -84,7 +90,7 @@
                     </tr>
 
                     <tr>
-                        <td class="description">Criação de Website</td>
+                        <td class="date">Criação de Website</td>
                         <td class="income">R$ 5.000,00</td>
                         <td class="date">23/01/2021</td>
                         <td>
@@ -93,7 +99,7 @@
                     </tr>
 
                     <tr>
-                        <td class="description">Internet</td>
+                        <td class="date">Internet</td>
                         <td class="expense">-R$ 200,00</td>
                         <td class="date">23/01/2021</td>
                         <td> <img src="assets/minus.svg" alt="Remover Transação"></td>
@@ -104,10 +110,97 @@
         </section>
     </main>
 
+    <div class="modal-overlay "> <!---------essa é a caixa meio transparente que fica por trás-->
+        <div class="modal"> <!----essa é caixa branca que fico por cima da caixa meio transparente-->
+                <div id="form">
+                   <h2>Nova Transação</h2>
+                   <form action="">
+
+                <div class="input-group">
+                    <label 
+                       class="sr-only"
+                       for="date"Descrição></label>
+                    <input
+                       type="text"
+                       id="date"
+                       name="date"
+                       placeholder="Descrição"
+
+                   />
+
+                </div>
+
+                <div class="input-group">
+                    <label 
+                       class="sr-only"
+                       for="amount">Valor</label>
+                    <input 
+                       type="number"
+                       step="0.01"
+                       id="amount"
+                       name="amount"
+                       placeholder="0,000"
+
+                   /> 
+                      <small class="help">Use o sinal -(negativo) para despesas e, (virgula)para casas decimais</small>
+                  
+                </div>
+                
+                <div class="input-group">
+                    <label 
+                       class="sr-only"
+                       for="date"Descrição></label>
+                    <input 
+                       type="date"
+                       id="date"
+                       name="date"
+                       placeholder="Data"
+
+                   />
+
+                </div>
+
+                <div class="input-group actions">
+                  <a onclick="Modal.close()"
+                  href="#" 
+                  class="button cancel"> Cancelar</a>  
+                  <button>Salvar</button>
+                   
+                </div>
+             </form>
+        </div>
+            
+     </div>
+    </div>
+
 
     <footer >
         <p>dev.finance$</p>
     </footer>
+
+    <script>
+        const Modal={
+              open(){
+                  //Abrir modal
+                  //Adicionar a class active ao modal
+                  document
+                  .querySelector('.modal-overlay')
+                  .classList
+                  .add('active')
+                },
+            
+                  close(){
+                  //fechar o modal
+                  //remover a classe active do modal
+                  document
+                  .querySelector('.modal-overlay')
+                  .classList
+                  .remove('active')
+              }
+
+         }
+
+    </script>
 </body>
 
 </html>
